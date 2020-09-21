@@ -1,0 +1,59 @@
+{
+  "name": "use-reusable-state",
+  "description": "Deep-equal caching version of React useState",
+  "license": "MIT",
+  "version": "0.0.0-development",
+  "author": "Gustaf Räntilä <g.rantila@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grantila/use-reusable-state"
+  },
+  "files": [ "dist" ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "scripts": {
+    "clean": "node_modules/.bin/rimraf dist",
+    "build": "yarn clean && node_modules/.bin/tsc -p tsconfig.prod.json",
+    "jest": "node_modules/.bin/jest --coverage",
+    "test": "yarn jest",
+    "cz": "git-cz"
+  },
+  "pre-commit": [
+    "build",
+    "test"
+  ],
+  "keywords": [
+    "react",
+    "hook",
+    "state",
+    "deep",
+    "equal",
+    "changes",
+    "reusable"
+  ],
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.4.1",
+    "@types/jest": "^26.0.14",
+    "@types/react": "^16.9.49",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "jest": "^26.4.2",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.0",
+    "typescript": "^4.0.3"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.9.49",
+    "react": "^16.13.1"
+  },
+  "dependencies": {
+    "instead": "^1.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
